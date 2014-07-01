@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pemiluApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Pemilu App 2014 &raquo; by: Rijalul Fikri</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="mainCtrl">
+	<div id="container">
+		<section id="header" class="container-full">
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<a ui-sref="home" id="logo">Pemilu App 2014</a>
+				</div>
+				<div class="col-xs-12 col-md-8">
+					<ul id="main-nav">
+						<li>
+							<a ui-sref="home" 
+								ng-class="{active: activeMenu=='home'}"
+								ng-click="activeMenu='home'">Kandidat</a>
+						</li>
+						<li>
+							<a ui-sref="caleg" 
+								ng-class="{active: activeMenu=='caleg'}"
+								ng-click="activeMenu='caleg'">Caleg</a>
+						</li>
+						<li>
+							<a ui-sref="berita" 
+								ng-class="{active: activeMenu=='berita'}"
+								ng-click="activeMenu='berita'">Berita</a>
+						</li>
+						<li>
+							<a ui-sref="faq" 
+								ng-class="{active: activeMenu=='faq'}"
+								ng-click="activeMenu='faq'">FAQ</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="content">
+			<div ncy-breadcrumb id="breadcrumb"></div>
+			<div class='fx-fade-down' ui-view></div>
+		</section>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>

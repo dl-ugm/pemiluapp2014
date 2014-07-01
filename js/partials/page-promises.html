@@ -1,0 +1,38 @@
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<div ng-show="isLoaded">
+	<div class="row">
+		<div class="col-xs-12">
+			<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+		</div>
+	</div>
+	<hr>
+	<h3 class="centered-title">Janji-Janji<br>{{ candidate }}</h3>
+	<hr>
+	<ul class="list-unstyled">
+		<li ng-repeat="j in promises" class="fx-fade-down">
+			<table style="background: #FFF;" class="table">
+				<tr>
+					<th width="200">Janji</th>
+					<td>{{ j.context_janji }}</td>
+				</tr>
+				<tr>
+					<th>Detail</th>
+					<td>{{ j.janji }}</td>
+				</tr>
+				<tr>
+					<th>Tanggal</th>
+					<td>{{ j.tanggal }}</td>
+				</tr>
+				<tr>
+					<th>Sumber</th>
+					<td><a href="{{ j.url_sumber }}" target="_blank">{{ j.judul_sumber }}</a></td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+	</div>
+</div>

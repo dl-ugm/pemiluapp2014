@@ -1,0 +1,19 @@
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<div ng-show="isLoaded">
+	<h3 class="centered-title">Frequently Asked Question</h3>
+	<hr>
+	<ul class="list-unstyled">
+		<li ng-repeat="f in faqs" class="fx-fade-down">
+			<table style="background: #FFF;" class="table">
+				<tr>
+					<th width="200">Question</th>
+					<td>{{ f.question }}</td>
+				</tr>
+				<tr>
+					<th>Answer</th>
+					<td>{{ f.answer }}</td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+</div>

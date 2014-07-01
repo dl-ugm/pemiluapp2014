@@ -1,0 +1,19 @@
+<h3 class="centered-title">Daftar Caleg Setiap Provinsi</h1>
+<hr>
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<div ng-show="isLoaded">
+	<accordion>
+	    <accordion-group heading="{{p.nama_lengkap}}" ng-repeat="p in provinces">
+	      <table class="table" style="background: #FFF;">
+	      	<tr>
+	      		<th>Nama Caleg</th>
+	      		<th>Partai</th>
+	      	</tr>
+	      	<tr ng-repeat="c in p.caleg">
+	      		<td>{{ c.nama }}</td>
+	      		<td>{{ cekPartai(c.partai.nama) }}</td>
+	      	</tr>
+	      </table>
+	    </accordion-group>
+	  </accordion>
+</div>

@@ -1,0 +1,12 @@
+<h3 class="centered-title">Latest News</h3>
+<hr>
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<ul class="posts" ng-show="isLoaded">
+	<li ng-repeat="p in news" class="fx-bounce-normal">
+		<h3>{{ p.title }}</h3>
+		<p class="meta">{{ p.date }}</p>
+		<div>
+			{{ p.content }}
+		</div>
+	</li>
+</ul>

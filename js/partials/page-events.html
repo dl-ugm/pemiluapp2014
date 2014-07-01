@@ -1,0 +1,38 @@
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<div ng-show="isLoaded">
+	<div class="row">
+		<div class="col-xs-12">
+			<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+		</div>
+	</div>
+	<hr>
+	<h3 class="centered-title">EVENTS Kandidat {{ candidate }}</h3>
+	<hr>
+	<ul class="list-unstyled">
+		<li ng-repeat="e in events" class="fx-fade-down">
+			<table style="background: #FFF;" class="table">
+				<tr>
+					<th width="200">Event</th>
+					<td>{{ e.judul }}</td>
+				</tr>
+				<tr>
+					<th>Deskripsi</th>
+					<td>{{ e.deskripsi }}</td>
+				</tr>
+				<tr>
+					<th>Tanggal</th>
+					<td>{{ e.tanggal_mulai }} - {{ e.tangga_selesai }}</td>
+				</tr>
+				<tr>
+					<th>Tags</th>
+					<td>{{ e.tags }}</td>
+				</tr>
+			</table>
+		</li>
+	</ul>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+	</div>
+</div>

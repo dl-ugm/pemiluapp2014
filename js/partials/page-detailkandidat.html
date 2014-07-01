@@ -1,0 +1,141 @@
+<div ng-hide="isLoaded" class="loader">Loading ...</div>
+<div ng-show="isLoaded">
+	<div class="row">
+		<div class="col-xs-12">
+			<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col xs-12 col-md-5">
+			<div style="position: relative;">
+				<img ng-src="img/candidate/{{ candidates.detail.id }}.jpg" alt="{{ candidates.detail.id }}">
+				<img src="img/img-overlay.png" alt="" class="img-overlay" style="width:'350'"+>
+			</div>
+		</div>
+		<div class="col xs-12 col-md-7">
+			<div class="table-responsive">
+				<table class="table table-bordered table-condensed table-hovered" style="background: #FFF;">
+					<thead>
+						<tr>
+							<th colspan="2">Data Pribadi</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nama</td>
+							<td>{{ candidates.detail.nama }}</td>
+						</tr>
+						<tr>
+							<td>Agama</td>
+							<td>{{ candidates.detail.agama }}</td>
+						</tr>
+						<tr>
+							<td>Tempat, Tanggal Lahir</td>
+							<td>{{ candidates.detail.tempat_lahir }}, {{ candidates.detail.tanggal_lahir }}</td>
+						</tr>
+						<tr>
+							<td>Partai</td>
+							<td>{{ candidates.detail.partai.nama }}</td>
+						</tr>
+						<tr>
+							<td>Biografi</td>
+							<td>{{ candidates.detail.biografi }}</td>
+						</tr>
+					</tbody>
+					<!-- Riwayat Pendidikan -->
+					<thead>
+						<tr>
+							<th colspan="2">Riwayat Pendidikan</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<table class="table table-bordered table-condensed table-hovered">
+									<thead>
+										<tr>
+											<th>Sekolah</th>
+											<th>Tanggal Mulai</th>
+											<th>Tanggal Selesai</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="rp in candidates.detail.riwayat_pendidikan">
+											<td>{{ rp.ringkasan }}</td>
+											<td>{{ rp.tanggal_mulai }}</td>
+											<td>{{ rp.tanggal_selesai }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					<!-- Riwayat  Organisasi -->
+					<thead>
+						<tr>
+							<th colspan="2">Riwayat Organisasi</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<table class="table table-bordered table-condensed table-hovered">
+									<thead>
+										<tr>
+											<th>Organisasi</th>
+											<th>Jabatan</th>
+											<th>Tanggal Mulai</th>
+											<th>Tanggal Selesai</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="ro in candidates.detail.riwayat_organisasi">
+											<td>{{ ro.ringkasan }}</td>
+											<td>{{ ro.jabatan }}</td>
+											<td>{{ ro.tanggal_mulai }}</td>
+											<td>{{ ro.tanggal_selesai }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					<!-- Riwayat Penghargaan -->
+					<thead>
+						<tr>
+							<th colspan="2">Riwayat Penghargaan</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="2">
+								<table class="table table-bordered table-condensed table-hovered">
+									<thead>
+										<tr>
+											<th>Penghargaan</th>
+											<th>Institusi</th>
+											<th>Tanggal</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="rp in candidates.detail.riwayat_penghargaan">
+											<td>{{ rp.ringkasan }}</td>
+											<td>{{ rp.institusi }}</td>
+											<td>{{ rp.tanggal }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<a ui-sref="home" class="btn btn-default btn-block">&laquo; BACK</a>
+		</div>
+	</div>
+</div>
